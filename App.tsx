@@ -282,7 +282,7 @@ const App: React.FC = () => {
             </h1>
             <div className="relative w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border-8 border-white shadow-2xl -mt-16 md:-mt-24 cursor-pointer hover:scale-105 transition-transform bg-white">
               <img 
-                src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/lee-se-young-profile.jpg" 
+                src="https://github.com/libby230/Lee-se-young/blob/77ed9d2b38340e73e2e76b1eb7d356b83ceb2a8f/unnamed.jpg?raw=true" 
                 alt="이세영 프로필" 
                 className="w-full h-full object-cover object-center" 
                 onError={(e) => {
@@ -392,7 +392,9 @@ const App: React.FC = () => {
                 <p className="text-sm font-bold text-gray-400 leading-relaxed italic">{INTERVIEW_DATA[0].context}</p>
               </div>
               <div className="lg:col-span-8 bg-blue-50 p-12 md:p-20 rounded-[3rem] relative">
-                <Quote size={80} className="absolute -top-10 -left-10 text-blue-600/10 rotate-180" />
+                <div className="absolute -top-10 -left-10 text-blue-600/10 rotate-180">
+                  <Quote size={80} />
+                </div>
                 <p className="text-xl md:text-2xl font-black text-gray-900 leading-tight">
                   {INTERVIEW_DATA[0].quote}
                 </p>
@@ -405,7 +407,9 @@ const App: React.FC = () => {
             {/* Interview 02 */}
             <div className="grid lg:grid-cols-12 gap-12 items-start">
               <div className="lg:col-span-8 order-2 lg:order-1 bg-gray-900 p-12 md:p-20 rounded-[3rem] relative text-white">
-                <Terminal size={80} className="absolute -bottom-10 -right-10 text-white/5" />
+                <div className="absolute -bottom-10 -right-10 text-white/5">
+                  <Terminal size={80} />
+                </div>
                 <p className="text-xl md:text-2xl font-black leading-tight">
                   {INTERVIEW_DATA[1].quote}
                 </p>
