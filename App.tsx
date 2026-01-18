@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Mail, Phone, Instagram, ArrowUpRight, Star, X, TrendingUp, Target, Rocket, Quote, MessageSquare, Terminal, Handshake } from 'lucide-react';
 import { NAV_LINKS, PERFORMANCE_METRICS, CAREER_HISTORY, INTERVIEW_DATA } from './constants.tsx';
 
+const BRAND_IMAGE_URL = "https://github.com/libby230/Lee-se-young/blob/81e306fb697fb9face31ff311843c7877a160d1a/maxresdefault.jpg?raw=true";
+
 interface ModalContent {
   title: string;
   subtitle?: string;
@@ -126,9 +128,6 @@ const Navbar: React.FC<{ onScroll: (id: string) => void }> = ({ onScroll }) => {
               {link.name}
             </button>
           ))}
-          <div className="w-12 h-6 bg-gray-200 rounded-full p-1 cursor-pointer">
-             <div className="w-4 h-4 bg-white rounded-full shadow-sm"></div>
-          </div>
         </div>
       </div>
     </nav>
@@ -336,7 +335,16 @@ const App: React.FC = () => {
       </section>
 
       {/* Performance Section */}
-      <section id="performance" className="py-32 bg-gray-900 text-white overflow-hidden relative">
+      <section 
+        id="performance" 
+        className="py-32 bg-gray-900 text-white overflow-hidden relative min-h-[400px]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url("${BRAND_IMAGE_URL}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex items-center gap-4 mb-20">
             <h2 className="text-3xl font-black text-white tracking-tight flex items-center gap-2 uppercase">
@@ -347,7 +355,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {PERFORMANCE_METRICS.map((metric, i) => (
               <div key={i} className="group cursor-pointer" onClick={() => openPerformanceModal(i)}>
-                <h3 className="text-5xl md:text-7xl font-black mb-4 tracking-tighter text-blue-500">{metric.value}</h3>
+                <h3 className="text-5xl md:text-7xl font-black mb-4 tracking-tighter text-blue-500 group-hover:scale-105 transition-transform origin-left">{metric.value}</h3>
                 <p className="text-xl font-bold mb-1">{metric.label}</p>
                 <p className="text-gray-400 text-sm">{metric.subtext}</p>
               </div>
@@ -490,7 +498,11 @@ const App: React.FC = () => {
              </div>
              <div className="relative">
                 <div className="aspect-square bg-blue-600 rounded-3xl rotate-3 flex items-center justify-center overflow-hidden shadow-2xl">
-                   <img src="https://picsum.photos/seed/baemin/800/800" alt="Vision" className="w-full h-full object-cover opacity-80 mix-blend-overlay" />
+                   <img 
+                    src={BRAND_IMAGE_URL} 
+                    alt="Vision" 
+                    className="w-full h-full object-cover opacity-90 mix-blend-multiply" 
+                   />
                 </div>
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gray-900 rounded-3xl -z-10 -rotate-12"></div>
              </div>
@@ -500,14 +512,21 @@ const App: React.FC = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-32 container mx-auto px-6">
-        <div className="bg-blue-600 rounded-[3rem] p-12 md:p-24 text-white relative overflow-hidden shadow-2xl shadow-blue-600/20">
+        <div 
+          className="rounded-[3rem] p-12 md:p-24 text-white relative overflow-hidden shadow-2xl shadow-blue-600/20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9)), url("${BRAND_IMAGE_URL}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-none">Let's Work Together</h2>
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-xl font-bold"><Mail /> yg00188@gmail.com</div>
-                <div className="flex items-center gap-4 text-xl font-bold"><Phone /> 010.7590.8883</div>
-                <div className="flex items-center gap-4 text-xl font-bold"><Instagram /> @libby.230</div>
+                <div className="flex items-center gap-4 text-xl font-bold hover:translate-x-2 transition-transform cursor-pointer"><Mail /> yg00188@gmail.com</div>
+                <div className="flex items-center gap-4 text-xl font-bold hover:translate-x-2 transition-transform cursor-pointer"><Phone /> 010.7590.8883</div>
+                <div className="flex items-center gap-4 text-xl font-bold hover:translate-x-2 transition-transform cursor-pointer"><Instagram /> @libby.230</div>
               </div>
             </div>
             <div className="bg-white rounded-3xl p-8 md:p-12 text-gray-900 shadow-2xl">
