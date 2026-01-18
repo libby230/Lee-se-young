@@ -1,5 +1,5 @@
 
-import { PerformanceMetric, CareerItem, NavLink, InterviewItem } from './types';
+import { PerformanceMetric, CareerItem, NavLink, InterviewItem } from './types.ts';
 
 export const NAV_LINKS: NavLink[] = [
   { name: 'About', href: '#about' },

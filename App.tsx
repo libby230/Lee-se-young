@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Mail, Phone, Instagram, ArrowUpRight, Star, X, TrendingUp, Target, Rocket, Quote, MessageSquare, Terminal, Handshake } from 'lucide-react';
-import { NAV_LINKS, PERFORMANCE_METRICS, CAREER_HISTORY, INTERVIEW_DATA } from './constants';
+import { NAV_LINKS, PERFORMANCE_METRICS, CAREER_HISTORY, INTERVIEW_DATA } from './constants.tsx';
 
 interface ModalContent {
   title: string;
